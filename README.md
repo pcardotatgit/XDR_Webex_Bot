@@ -43,7 +43,7 @@ ok now you can run the bot by typing
 - first  : a
 - second : b
 
-Here under the step by step installation 
+## Here under the step by step installation if you don't use the procedure just above
 
 ## Step 1. Create a working directory
 
