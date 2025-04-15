@@ -125,15 +125,20 @@ In this project we build the adaptative card thanks to dictionnary building and 
 
 ## Edit config.py and Set the initialization variables
 
-This config file contains only 2 variables. 
+This config file contains several variables. 
 
-Only the **BOT_ACCESS_TOKEN** variable is mandatory to have the bot work.
+The **BOT_ACCESS_TOKEN** variable is mandatory to have the bot work.
 
-The second variable **DESTINATION_ROOM_ID** is optoinnal. It is needed by the **4-send-advanced_dynamic_alert_message_to_room_example.py** script you might recognize if you went thru all chapter of this webex bot for XDR project.
+The second variable **DESTINATION_ROOM_ID** is optionnal. It is needed by the **4-send-advanced_dynamic_alert_message_to_room_example.py** script you might recognize if you went thru all chapter of this webex bot for XDR project.
 
 **DESTINATION_ROOM_ID**  must be your Own Room ID !. It is needed by the **4-send-advanced_dynamic_alert_message_to_room_example.py** script for sending an example of alert formular into the room.
 
 If you don't know you room id. you will be able to see it into the bot console when you will send any message to the bot.
+
+This config file contains as well the XDR webhooks that are attached to every XDR workflows to trigger into custom variables you will have to use within the API calls the bot will do  to XDR
+
+- XDR_WEBHOOK_FOR_KILLING_PROCESS
+- XDR_WEBHOOK_FOR_INVESTIGATION
 
 ## Run the Bot
 
@@ -156,12 +161,19 @@ You can try to send the following commands :
 
 The main script is the **run_bot.py** one. This is the script to run and this one use the others scripts as resources.
 
-The **alert_card.py** script manages the adptative card generation as we saw in the previous sections.
-The **engine.py** is the script which manages the commands to send to webex room and associated actions
+The **alert_card.py** script manages the adptative card generation.
 
-Here is here under how to add your own command :
+The **engine.py** is the script which manages the commands ( keywords ) to send to webex room and associated actions. You have to edit this file to add the python functions that will be triggered by click on buttons or keywords sent to webex.
 
-Step 1 edit the **engine.py script and add a new **cmd class** like the example bellow
+This script contains a few examples of such commands coming from either manual inputs or click on a button.
+
+Search for the **command_keyword** variable in each function init subfunction. It contains the string that will trigger the attached function which is just bellow. 
+
+For click on button, the command_keyword is the name of the input section declared into the Adaptive card JSON definition. We have 2 examples **observables** and **targets**.
+
+Here is here under how to add your own new command :
+
+Step 1 edit the **engine.py** script and add a new **cmd class** like the example bellow
 
     class cmdXXX(Command):
         def __init__(self):
