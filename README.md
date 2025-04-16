@@ -32,6 +32,12 @@ Open a terminal console.
 
 ## very fast install for windows users
 
+For anyone who don't want to waste time.
+
+You must start with a machine that already has python installed. This project was written in python 3.11 version but should work with python 3.10.
+
+Dowload the project into a working directory into your laptop. Unzip the dowloaded file and open a terminal console into the project root directory. Then
+
 - type a
 - then type b
 - then type c
@@ -40,9 +46,8 @@ Open a terminal console.
 
 ok now you can run the bot by typing
 
-- first  : a
-- second : b
-
+- first  : type a
+- second : type b
 ## Here under the step by step installation if you don't use the procedure just above
 
 ## Step 1. Create a working directory
