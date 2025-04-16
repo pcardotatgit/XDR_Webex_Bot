@@ -36,7 +36,7 @@ For anyone who don't want to waste time.
 
 You must start with a machine that already has python installed. This project was written in python 3.11 version but should work with python 3.10.
 
-Dowload the project into a working directory into your laptop. Unzip the dowloaded file and open a terminal console into the project root directory. Then
+Download the project into a working directory into your laptop. Unzip the dowloaded file and open a terminal console into the project root directory. Then
 
 - type a
 - then type b
@@ -163,6 +163,8 @@ You can try to send the following commands :
 - alert : the bot will send you back the alert adaptive card we used in the previous sections. And you can select objects into the formular
 
 ## Code architecture and how to add new commands
+
+In very short. If you want to add your own keyword to monitor in the webex room and trigger functions from it, then edit the **engine.py ** in order to add a dedicated function for this, and second edit the **run_bot.py** in order to map this new keyword to the related function into **engine.py**.
 
 The main script is the **run_bot.py** one. This is the script to run and this one use the others scripts as resources.
 
